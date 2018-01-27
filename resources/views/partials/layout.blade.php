@@ -15,15 +15,28 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
+    <link href="/css/blog.css" rel="stylesheet">
   </head>
 
   <body>
 
-    @include('partials/nav')
+    @include('partials.nav')
 
-      @yield('content')
+    <div class="blog-header">
+      <div class="container">
+        <h1 class="blog-title">Bloggu</h1>
+      </div>
+    </div>
 
-    @include('partials/footer')
+    <div class="container">
+      <div class="row">
+        @yield('content')
+        @include('partials.sidebar')
+      </div>
+    </div>
+
+      
+
+    @include('partials.footer')
   </body>
 </html>
