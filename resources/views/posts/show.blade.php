@@ -7,6 +7,8 @@
       <p>{{$post->body}}</p>
       <hr>
 
+      @include('partials.flash')
+
       <div class="comments">
         <ul class="list-group">
           @foreach($post->comments as $comment)
@@ -19,6 +21,29 @@
           @endforeach
         </ul>
       </div>
+
+      {{--  Add a comment  --}}
+
+     
+
+      <hr>
+      <div class="card">
+        <div class="card-block">
+          <form method="POST" action="/posts/{{ $post->id }}/comments">
+            {{csrf_field()}}
+
+            <div class="form-group">
+              <textarea name="body" placeholder="Your comment here" class="form-control" cols="30" rows="6"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Leave Comment</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
   </div>
 @endsection
 
