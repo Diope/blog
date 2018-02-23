@@ -4,7 +4,7 @@
     <div class="col-md-8">
       <h1>Sign In</h1>
 
-      @include('partials/flash')
+      @include('partials/flashErrors')
 
       <form method="POST" action="/login">
         {{ csrf_field() }}

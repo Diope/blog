@@ -4,7 +4,7 @@
     <div class="col-sm-8">
       <h1>Register</h1>
 
-      @include('partials/flash')
+      @include('partials/flashErrors')
 
       <form method="POST" action="/register">
         {{ csrf_field() }}

@@ -6,7 +6,7 @@
     <hr>
 
     
-    @include('partials.flash')
+    @include('partials.flashErrors')
 
     <form method="POST" action="/posts">
       {{csrf_field()}}

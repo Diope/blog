@@ -21,6 +21,8 @@
   <body>
 
     @include('partials.nav')
+    
+    @include('partials.flash')
 
     <div class="blog-header">
       <div class="container">

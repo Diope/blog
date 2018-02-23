@@ -16,6 +16,7 @@ class PostsController extends Controller
 
     public function index()
     {
+
         if (request(['month', 'year'])){
             $posts = Post::latest()
                 ->filter(request(['month', 'year']))
@@ -45,6 +46,8 @@ class PostsController extends Controller
         ]);
 
         auth()->user()->publish(new Post(request(['title', 'body'])));
+
+        session()->flash('message', 'Your post has been published!');
 
         return redirect('/');
     }
