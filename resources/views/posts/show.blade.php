@@ -3,6 +3,17 @@
 @section('content')
   <div class="col-sm-8 blog-main">  
       <h2>{{$post->title}}</h2>
+
+      @if(count($post->tags))
+        <ul>
+          @foreach($post->tags as $tag)
+            <li>
+            <a href="/posts/tags/{{$tag->name}}">{{$tag->name}}</a>
+            </li>
+            @endforeach
+        </ul>
+        @endif
+
       <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} by <a href="#">{{$post->user->name}}</a></p>
       <p>{{$post->body}}</p>
       <hr>
